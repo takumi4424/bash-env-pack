@@ -51,8 +51,9 @@ if [[ ! -d ${dein_path} ]]; then
   echo "Installed."
 fi
 
-source_text="if [[ -f ${here}/bashrc ]]; then source ${here}/bashrc fi"
+source_text="if [[ -f ${here}/bashrc ]]; then source ${here}/bashrc; fi"
 if ! cat ${HOME}/.bashrc | grep -F "${source_text}" > /dev/null 2>&1; then
   echo "" >> ${HOME}/.bashrc
   echo "${source_text}" >> ${HOME}/.bashrc
+  echo "" >> ${HOME}/.bashrc
 fi
